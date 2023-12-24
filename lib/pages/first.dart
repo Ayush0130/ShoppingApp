@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/second.dart';
+import 'package:shopping/pages/items.dart';
+
+List value=[0,0,0,0,0,0,0,0];
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
 
@@ -15,8 +18,12 @@ class _FirstPageState extends State<FirstPage> {
   double? price=0;
   List selectedProduct=[];
   List selectedProductPrice=[];
+  bool is_checked=false;
 
   Widget build(BuildContext context) {
+    String name='baigan';
+    double price=200;
+    bool v1;
     return Scaffold(
 
       appBar: AppBar(
@@ -45,118 +52,28 @@ class _FirstPageState extends State<FirstPage> {
             trailing: Text(
                 style:TextStyle(
                   fontSize: 20,
-
                 ),
-
               'Price \n (INR)'
             ),
           ),
           ),
-          ListTile(
-            title:
-            Text(
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-                height: 4,
-              ),
-                'Cauliflower'
-            ),
-            leading: Radio(
-             value :1,
-              groupValue: selectedoption,
-              onChanged: (value) {
-                setState(() {
-                  selectedoption = value;
-                  var d = price= (price! + 300)!;
-                  selectedProduct.add("Cauliflower");
-                  selectedProductPrice.add(300);
-                });
-              },
-            ),
-            trailing: Text(
-             style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-                '300.00'
-            ),
+          Goods(name: 'Cauliflower',
+            price:500,
+            index:0,
           ),
-          ListTile(
-
-            title:
-            Text(
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-
-                  color: Colors.blue,
-                  height: 4,
-
-                ),
-                'Cabbage'
-            ),
-            leading: Radio(
-              value :1,
-              groupValue: selectedoption1,
-              onChanged: (value) {
-                setState(() {
-                  selectedoption1 = value;
-                  var d = price= (price! + 400)!;
-                  selectedProduct.add("Cabbage");
-                  selectedProductPrice.add(400);
-                  print (selectedProduct);
-                  print (selectedProductPrice);
-                  print(price);
-                });
-              },
-            ),
-            trailing: Text(
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              '400.00'
-            ),
-
+          Goods(name: 'Cabbage',
+            price:400,
+            index:1,
           ),
-          ListTile(
-            title:
-            Text(
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-
-                  color: Colors.blue,
-                  height: 4,
-
-                ),
-                'Beans'
-            ),
-            leading: Radio(
-              value :1,
-              groupValue: selectedoption2,
-              onChanged: (value) {
-                setState(() {
-                  selectedoption2 = value;
-                  var d = price= (price! + 500)!;
-                  selectedProduct.add("Beans");
-                  selectedProductPrice.add(500);
-                  print (selectedProduct);
-                  print (selectedProductPrice);
-                  print(price);
-                });
-              },
-            ),
-            trailing: Text(
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                '500.00'
-            ),
+          Goods(name: 'Beans',
+            price:500,
+            index:2,
           ),
+          Goods(name: 'Carrot',
+            price:500,
+            index:3,
+          ),
+
         ],
       ),
       floatingActionButton: Row(

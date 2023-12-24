@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/final.dart';
+import 'package:shopping/pages/items.dart';
+//import 'package:shopping/pages/first.dart';
 
 class secondpage extends StatefulWidget {
   final List data;
@@ -15,12 +17,13 @@ class secondpage extends StatefulWidget {
   @override
   State<secondpage> createState() => _secondpageState();
 }
-int? selected,selected1,selected2;
-double? price=0;
+
 
 class _secondpageState extends State<secondpage> {
   List selectedFruit=[];
   List selectedFruitPrice=[];
+  int? selected,selected1,selected2;
+  double? price=0;
   //selectedFruit.add(data);
   @override
   Widget build(BuildContext context) {
@@ -60,111 +63,25 @@ class _secondpageState extends State<secondpage> {
               ),
             ),
           ),
-          ListTile(
-            title:
-            Text(
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
-                  height: 4,
-
-                ),
-                'Banana'
-            ),
-            leading: Radio(
-              value :2,
-              groupValue: selected,
-              onChanged: (value) {
-                setState(() {
-                  selected = value;
-                  //var d = price= (price! + 100)!;
-                  selectedFruit.add("Banana");
-                  selectedFruitPrice.add(100);
-                });
-              },
-            ),
-            trailing: Text(
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                '100.00'
-            ),
+         Goods(
+           name:'Banana',
+           price:200,
+           index:4,
+         ),
+          Goods(
+            name:'Apple',
+            price:250,
+            index:5,
           ),
-          ListTile(
-
-            title:
-            Text(
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-
-                  color: Colors.blue,
-                  height: 4,
-
-                ),
-                'Apple'
-            ),
-            leading: Radio(
-              value :2,
-              groupValue: selected1,
-              onChanged: (value) {
-                setState(() {
-                  selected1 = value;
-                  var d = price= (price! + 200)!;
-                  selectedFruit.add("Apple");
-                  selectedFruitPrice.add(200);
-                  print (selectedFruit);
-                  print (selectedFruitPrice);
-                  print(price);
-                });
-              },
-            ),
-            trailing: Text(
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                '200.00'
-            ),
-
+          Goods(
+            name:'Oranges',
+            price:150,
+            index:6,
           ),
-          ListTile(
-            title:
-            Text(
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-
-                  color: Colors.blue,
-                  height: 4,
-
-                ),
-                'Oranges'
-            ),
-            leading: Radio(
-              value :2,
-              groupValue: selected2,
-              onChanged: (value) {
-                setState(() {
-                  selected2 = value;
-                  var d = price= (price! + 150)!;
-                  selectedFruit.add("Oranges");
-                  selectedFruitPrice.add(150);
-                  print (selectedFruit);
-                  print (selectedFruitPrice);
-                  print(price);
-                });
-              },
-            ),
-            trailing: Text(
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                '150.00'
-            ),
+          Goods(
+            name:'Guava',
+            price:100,
+            index:7,
           ),
         ],
       ),
