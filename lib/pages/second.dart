@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/pages/final.dart';
 import 'package:shopping/pages/items.dart';
-//import 'package:shopping/pages/first.dart';
+import 'package:shopping/pages/first.dart';
 
 class secondpage extends StatefulWidget {
-  final List data;
-  final List data1;
-
   const secondpage( {
     super.key,
-    required this.data,
-    required this.data1,
   }
   );
 
@@ -20,10 +15,6 @@ class secondpage extends StatefulWidget {
 
 
 class _secondpageState extends State<secondpage> {
-  List selectedFruit=[];
-  List selectedFruitPrice=[];
-  int? selected,selected1,selected2;
-  double? price=0;
   //selectedFruit.add(data);
   @override
   Widget build(BuildContext context) {

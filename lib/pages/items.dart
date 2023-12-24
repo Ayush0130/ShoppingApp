@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'first.dart';
 
 class Goods extends StatefulWidget {

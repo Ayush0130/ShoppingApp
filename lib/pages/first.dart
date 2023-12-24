@@ -4,7 +4,7 @@ import 'package:shopping/pages/items.dart';
 
 List value=[0,0,0,0,0,0,0,0];
 class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+   FirstPage({super.key});
 
   @override
   State<FirstPage> createState() => _FirstPageState();
@@ -14,10 +14,6 @@ class _FirstPageState extends State<FirstPage> {
 
   //enum Vegetable{cabbage , cauliflower}
   @override
-   int? selectedoption,selectedoption1,selectedoption2;
-  double? price=0;
-  List selectedProduct=[];
-  List selectedProductPrice=[];
   bool is_checked=false;
 
   Widget build(BuildContext context) {
@@ -113,8 +109,6 @@ class _FirstPageState extends State<FirstPage> {
             onPressed: ()  => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => secondpage(
-                data: selectedProduct,
-                data1 :selectedProductPrice,
               )),
             ),
             child:const Text(
