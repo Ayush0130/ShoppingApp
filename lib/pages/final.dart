@@ -46,8 +46,54 @@ class Final extends StatelessWidget {
       );
     };
           },
-
       ),
+       floatingActionButton: Row(
+
+          children:[
+            SizedBox(
+              width:80,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red, // background (button) color
+                foregroundColor: Colors.white, // foreground (text) color
+                padding:    EdgeInsets.all(20) ,
+
+              ),
+              onPressed: () =>Navigator.popUntil(
+                context,
+                ModalRoute.withName('/'),
+              ),
+              child:const Text(
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  'Cancel'
+              ),
+            ),
+            SizedBox(
+              width: 80,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green, // background (button) color
+                foregroundColor: Colors.white, // foreground (text) color
+                padding:    EdgeInsets.all(20) ,
+              ),
+              onPressed: ()  => Navigator.popUntil(
+                context,
+                ModalRoute.withName('/'),
+              ),
+              child:const Text(
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  'Submit'
+              ),
+            ),
+          ]),
     );
   }
 }
