@@ -52,29 +52,7 @@ class Final extends StatelessWidget {
   }
 }
 
-class show extends StatelessWidget {
-  final int index;
-   show({
-     required this.index,
-     super.key,
-   });
 
-  @override
-  Widget build(BuildContext context) {
-      return ListTile(
-        title:
-        Text(
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-            height: 4,
-          ),
-          '',
-        ),
-      );
-    }
-  }
 
 
 
